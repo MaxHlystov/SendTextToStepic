@@ -1,7 +1,8 @@
 Script for autoit to send text file to stepic.org treminal.
 
-Скрипт к autoit (http://www.autoitscript.com).
-Отсылает текст из файла в открытый терминал stepic.org в браузере Firefox.
+Скрипт к autoit (http://www.autoitscript.com). Отсылает текст из файла в открытый терминал stepic.org в браузере Firefox.
+
+Ссылка на .exe файл: https://yadi.sk/d/fYdaG9uLnqA7G
 
 Перед запуском убедитесь, что:
 - Запущен Firefox.
