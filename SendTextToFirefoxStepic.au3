@@ -8,7 +8,7 @@ HotKeySet("^!x", "MyExit")
 $var = FileOpenDialog("Файл для отправки", @WorkingDir & "\", "Любой файл (*.*)", 1)
 
 If @error Then
-   Exit
+	Exit
 Else
    $fname = StringReplace($var, @WorkingDir & "\", "")
 EndIf
@@ -44,6 +44,7 @@ While 1
 WEnd
 
 Send("{ESC}")
+Sleep(500)
 Send(":wq!{ENTER}")
 
 MsgBox($MB_SYSTEMMODAL, "AutoIt", "Finish")
@@ -53,5 +54,6 @@ FileClose($hFile)
 Exit
 
 Func MyExit()
-    Exit
+   MsgBox($MB_SYSTEMMODAL, "AutoIt", "Aborted")
+   Exit
 EndFunc
