@@ -10,7 +10,7 @@ $var = FileOpenDialog("Файл для отправки", @WorkingDir & "\", "Л
 If @error Then
 	Exit
 Else
-    $var = StringReplace($var, "|", @CRLF)
+   $fname = StringReplace($var, @WorkingDir & "\", "")
 EndIf
 
 $hFile = FileOpen($var, 0)
@@ -25,9 +25,11 @@ WinWaitActive("[CLASS:MozillaWindowClass]")
 
 MouseClick("left", 802, 615, 1)
 
-AutoItSetOption("SendKeyDelay", 10)
+AutoItSetOption("SendKeyDelay", 1)
 
-Send("vim temp.cpp{ENTER}i")
+Send("vim ")
+Send($fname, 1)
+Send("{ENTER}i")
 
 ; Читает построчно текст, пока не будет достигнут конец файла EOF
 While 1
@@ -36,8 +38,6 @@ While 1
 
    Send($sLine, 1)
    Send("{ENTER}")
-   ;If MsgBox(1, "Прочитанная строка:", $sLine) = 2 Then ExitLoop
-
 WEnd
 
 Send("{ESC}")
