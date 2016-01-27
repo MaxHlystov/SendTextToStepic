@@ -1,4 +1,5 @@
 Send text file to stepic.org treminal.
+
 Отсылает текст из файла в открытый терминал stepic.org в браузере Firefox.
 
 Перед запуском убедитесь, что:
