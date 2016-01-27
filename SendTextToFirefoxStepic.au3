@@ -8,7 +8,7 @@ HotKeySet("^!x", "MyExit")
 $var = FileOpenDialog("Файл для отправки", @WorkingDir & "\", "Любой файл (*.*)", 1)
 
 If @error Then
-	Exit
+   Exit
 Else
    $fname = StringReplace($var, @WorkingDir & "\", "")
 EndIf
@@ -23,7 +23,10 @@ EndIf
 
 WinWaitActive("[CLASS:MozillaWindowClass]")
 
-MouseClick("left", 802, 615, 1)
+$aClientSize = WinGetClientSize("[ACTIVE]")
+$iX = $aClientSize[0] / 2
+$iY = $aClientSize[1] / 2
+MouseClick("left", $iX, $iY, 1)
 
 AutoItSetOption("SendKeyDelay", 1)
 
